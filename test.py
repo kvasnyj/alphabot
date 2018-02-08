@@ -1,23 +1,16 @@
-#!/usr/bin/python
-import sys
-import Adafruit_DHT
+import RPi.GPIO as GPIO                          
+import time             
+
+GPIO.setmode(GPIO.BCM)                          
+pir = 4                                        
+GPIO.setup(pir, GPIO.IN)                          
+
+print "Waiting for sensor to settle"
+time.sleep(2)                                     
+print "Detecting motion"
 
 while True:
-
-    humidity, temperature = Adafruit_DHT.read_retry(11, 4)
-
-    #print 'Temp: {0:0.1f} C  Humidity: {1:0.1f} %'.format(temperature, humidity)
-    print 'Temp: %s C  Humidity: %s %'.format(temperature, humidity)
-
-# import RPi.GPIO as GPIO
-
-
-# GPIO.setmode(GPIO.BCM)
-# GPIO.setup(2,GPIO.IN)
-
-# i20 = -100
-# while True:
-#     i2 = GPIO.input(2)
-#     if i20 != i2:
-#         i20 = i2
-#         print(i2)
+   if GPIO.input(pir):                            
+      print "Motion Detected!"
+      time.sleep(2)                               
+   time.sleep(0.1)                                
