@@ -3,5 +3,5 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 
-i2 = GPIO.input(2)
+i2 = GPIO.input(3)
 print(i2)
