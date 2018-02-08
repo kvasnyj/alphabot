@@ -22,5 +22,5 @@ def Distance():
 
 
 while True:
-        middleDistance = Distance()
+    middleDistance = Distance()
     print("MiddleDistance = %0.2f cm"%middleDistance)    
