@@ -10,7 +10,7 @@ time.sleep(2)
 print "Detecting motion"
 
 while True:
-   if GPIO.input(pir):                            
-      print "Motion Detected!"
-      time.sleep(2)                               
-   time.sleep(0.1)                                
+    val = GPIO.input(pir)
+    print val
+    time.sleep(2)                               
+                            
