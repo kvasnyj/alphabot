@@ -14,6 +14,26 @@ GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
 inert = 3
 
+def right():
+	print("right")
+
+	Ab.stop()
+	time.sleep(0.2)
+
+	for i in range(inert): 
+		Ab.right()
+		time.sleep(0.2)
+
+def left():
+	print("left")
+
+	Ab.stop()
+	time.sleep(0.2)
+
+	for i in range(inert): 
+		Ab.left()
+		time.sleep(0.2)
+
 try:
 	while True:
 		DR_status = GPIO.input(DR)
@@ -22,23 +42,11 @@ try:
 			Ab.forward()
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
-			print("left")
-
-			Ab.stop()
-			time.sleep(0.2)
-
-			for i in range(inert): 
-				Ab.left()
-				time.sleep(0.2)
+			left()
+			right()
 		elif((DL_status == 0) and (DR_status == 1)):
-			print("right")
-
-			Ab.stop()
-			time.sleep(0.2)
-
-			for i in range(inert): 
-				Ab.right()
-				time.sleep(0.2)
+			right()
+			left()
 		else:
 			Ab.backward()
 			time.sleep(0.2)
