@@ -13,7 +13,6 @@ GPIO.setup(DR,GPIO.IN,GPIO.PUD_UP)
 GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
 inert = 3
-cnt = 3
 
 def right():
 	print("right")
@@ -40,16 +39,11 @@ try:
 		DR_status = GPIO.input(DR)
 		DL_status = GPIO.input(DL)
 		if((DL_status == 1) and (DR_status == 1)):
-			if cnt<3:
-				cnt=cnt+1
-				continue
 			Ab.forward()
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
-			cnt = 0
 			left()
 		elif((DL_status == 0) and (DR_status == 1)):
-			cnt = 0
 			right()
 		else:
 			Ab.backward()
