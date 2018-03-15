@@ -25,12 +25,14 @@ try:
 
 			Ab.left()
 			print("left")
+			time.sleep(0.2)
 		elif((DL_status == 0) and (DR_status == 1)):
 			Ab.stop()
 			time.sleep(0.2)
 
 			Ab.right()
 			print("right")
+			time.sleep(0.2)
 		else:
 			Ab.backward()
 			time.sleep(0.2)
