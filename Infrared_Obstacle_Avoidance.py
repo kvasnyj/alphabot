@@ -20,14 +20,17 @@ try:
 		DL_status = GPIO.input(DL)
 		if((DL_status == 1) and (DR_status == 1)):
 			Ab.forward()
+			inert = 10
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
 			for i in range(inert): 
 				Ab.left()
+			inert = inert+1
 			print("left")
 		elif((DL_status == 0) and (DR_status == 1)):
 			for i in range(inert): 
 				Ab.right()
+			inert = inert+1
 			print("right")
 		else:
 			Ab.backward()
