@@ -43,10 +43,8 @@ try:
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
 			left()
-			right()
 		elif((DL_status == 0) and (DR_status == 1)):
 			right()
-			left()
 		else:
 			Ab.backward()
 			time.sleep(0.2)
