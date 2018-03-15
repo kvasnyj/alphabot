@@ -12,7 +12,7 @@ GPIO.setwarnings(False)
 GPIO.setup(DR,GPIO.IN,GPIO.PUD_UP)
 GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
-inert = 5
+inert = 3
 
 def right():
 	print("right")
