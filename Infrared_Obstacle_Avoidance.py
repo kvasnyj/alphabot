@@ -12,25 +12,24 @@ GPIO.setwarnings(False)
 GPIO.setup(DR,GPIO.IN,GPIO.PUD_UP)
 GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
-inert = 5
-
 try:
 	while True:
 		DR_status = GPIO.input(DR)
 		DL_status = GPIO.input(DL)
 		if((DL_status == 1) and (DR_status == 1)):
 			Ab.forward()
-			inert = 10
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
-			for i in range(inert): 
-				Ab.left()
-			inert = inert+1
+			Ab.stop()
+			time.sleep(0.2)
+
+			Ab.left()
 			print("left")
 		elif((DL_status == 0) and (DR_status == 1)):
-			for i in range(inert): 
-				Ab.right()
-			inert = inert+1
+			Ab.stop()
+			time.sleep(0.2)
+
+			Ab.right()
 			print("right")
 		else:
 			Ab.backward()
