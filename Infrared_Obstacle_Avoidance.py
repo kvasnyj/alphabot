@@ -22,19 +22,23 @@ try:
 			Ab.forward()
 			print("forward")
 		elif((DL_status == 1) and (DR_status == 0)):
-			Ab.stop()
-			time.sleep(0.2)
-
-			for i in range(inert): Ab.left()
 			print("left")
-			time.sleep(0.2)
-		elif((DL_status == 0) and (DR_status == 1)):
+
 			Ab.stop()
 			time.sleep(0.2)
 
-			for i in range(inert): Ab.right()
+			for i in range(inert): 
+				Ab.left()
+				time.sleep(0.2)
+		elif((DL_status == 0) and (DR_status == 1)):
 			print("right")
+			
+			Ab.stop()
 			time.sleep(0.2)
+
+			for i in range(inert): 
+				Ab.right()
+				time.sleep(0.2)
 		else:
 			Ab.backward()
 			time.sleep(0.2)
