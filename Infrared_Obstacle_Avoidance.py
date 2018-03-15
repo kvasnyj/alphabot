@@ -12,7 +12,7 @@ GPIO.setwarnings(False)
 GPIO.setup(DR,GPIO.IN,GPIO.PUD_UP)
 GPIO.setup(DL,GPIO.IN,GPIO.PUD_UP)
 
-inert = 20
+inert = 3
 
 try:
 	while True:
@@ -32,7 +32,7 @@ try:
 				time.sleep(0.2)
 		elif((DL_status == 0) and (DR_status == 1)):
 			print("right")
-			
+
 			Ab.stop()
 			time.sleep(0.2)
 
