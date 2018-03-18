@@ -3,7 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-mjpg-AlphaBot/
 
 # C extensions
 *.so
